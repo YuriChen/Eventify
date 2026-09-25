@@ -1,0 +1,56 @@
+# ==========================================
+# Build results
+# ==========================================
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+# ==========================================
+# Visual Studio / Rider
+# ==========================================
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# ==========================================
+# NuGet
+# ==========================================
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ==========================================
+# Entity Framework / Migrations (opcional)
+# ==========================================
+# Descomente se NÃO quiser versionar as migrations
+# Migrations/
+
+# ==========================================
+# Configurações locais (podem conter segredos)
+# ==========================================
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# ==========================================
+# Sistema Operacional
+# ==========================================
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Arquivos temporários
+# ==========================================
+*.tmp
+*.log
+*.cache

@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Eventify.API/Eventify.API.csproj" />
+  </Folder>
+</Solution>

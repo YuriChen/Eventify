@@ -1,0 +1,23 @@
+<div>
+    <p>Eventos em São Paulo</p>
+    <div class="flex gap-5">
+        <div>
+            <z-date-picker zPlaceholder="A partir de..."></z-date-picker>
+        </div>
+        <div>
+            <z-combobox id="cbGeneros" [(zValue)]="selectedGenre">
+                <z-combobox-input placeholder="Gêneros" />
+
+                <z-combobox-content>
+                    <z-combobox-empty>Gênero não encontrado.</z-combobox-empty>
+
+                    <z-combobox-list>
+                    @for (genero of generos(); track genero.id) {
+                        <z-combobox-item [zValue]="genero.id.toString()">{{ genero.name }}</z-combobox-item>
+                    }
+                    </z-combobox-list>
+                </z-combobox-content>
+            </z-combobox>
+        </div>
+    </div>
+</div>
