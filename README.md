@@ -8,8 +8,7 @@ explorar eventos por cidade, data e gênero musical.
 
 O Eventify é uma aplicação web full-stack em desenvolvimento, criada para centralizar 
 a busca por eventos musicais e facilitar a divulgação por parte de produtores 
-independentes. O foco inicial são eventos de música: festivais, shows, festas 
-eletrônicas, apresentações ao vivo e eventos em clubes.
+independentes. O foco inicial são eventos de música: festivais, shows, festas, apresentações ao vivo e eventos em clubes.
 
 O projeto está sendo construído como um estudo prático de arquitetura full-stack 
 moderna, com separação clara entre frontend e backend, e boas práticas de 
