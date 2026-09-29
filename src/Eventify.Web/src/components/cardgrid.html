@@ -1,0 +1,28 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    @for (evento of eventos; track $index) {
+        <z-card>
+            <img [src]="evento.coverImageUrl" [alt]="evento.title" class="w-full h-40 object-cover" />
+
+            <z-card-header>
+                <z-card-title>{{ evento.title }}</z-card-title>
+                <z-card-description>{{ evento.producerName }}</z-card-description>
+            </z-card-header>
+
+            <z-card-content>
+                <p>{{ evento.venueName }} — {{ evento.city }}, {{ evento.state }}</p>
+                <p>{{ evento.startDate | date:'dd/MM/yyyy' }} às {{ evento.startDate | date:'HH:mm' }}</p>
+                <p class="text-lg font-bold text-[#A78BFA]">{{ evento.price | currency:'BRL' }}</p>
+
+                <div class="flex flex-wrap gap-1 mt-2">
+                    @for (genre of evento.genres; track $index) {
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#8B5CF6]/20 text-[#A78BFA] border border-[#8B5CF6]/30">
+                            {{ genre }}
+                        </span>
+                    }
+                </div>
+            </z-card-content>
+        </z-card>
+    } @empty {
+        <p class="text-white/50 col-span-3">Nenhum evento encontrado.</p>
+    }
+</div>

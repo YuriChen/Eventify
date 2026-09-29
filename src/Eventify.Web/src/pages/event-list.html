@@ -1,12 +1,39 @@
 <div>
-    <p>Eventos em São Paulo</p>
-    <div class="flex gap-5">
+    <p>Eventos:</p>
+    <div id="divFilters" class="flex gap-5">
         <div>
-            <z-date-picker zPlaceholder="A partir de..."></z-date-picker>
+            <z-combobox id="cbCities" [(zValue)]="selectedCity" (zValueChange)="loadEventsGrid()">
+                <z-combobox-input placeholder="Cidades" />
+
+                <z-combobox-content>
+                    <z-combobox-empty>Cidade não encontrada.</z-combobox-empty>
+
+                    <z-combobox-list>
+                        <z-combobox-item [zValue]="'1'">São Paulo</z-combobox-item>
+                        <z-combobox-item [zValue]="'2'">Rio de Janeiro</z-combobox-item>
+                        <z-combobox-item [zValue]="'999'">Belo Horizonte</z-combobox-item>
+                        <z-combobox-item [zValue]="'888'">Curitiba</z-combobox-item>
+                    </z-combobox-list>
+                </z-combobox-content>
+            </z-combobox>
         </div>
         <div>
-            <z-combobox id="cbGeneros" [(zValue)]="selectedGenre">
-                <z-combobox-input placeholder="Gêneros" />
+            <z-date-picker 
+                zPlaceholder="A partir de..." 
+                [(value)]="selectedStartDate"
+                (dateChange)="loadEventsGrid()">
+            </z-date-picker>
+        </div>
+        <div>
+            <z-combobox zMultiple zAutoHighlight zWidth="full" [(zValue)]="selectedGenres" (zValueChange)="loadEventsGrid()">
+                <z-combobox-chips class="w-full max-w-xs">
+                    @for (selected of selectedGenres(); track selected) {
+                        <z-combobox-chip [zValue]="selected">
+                            {{ genreNameFindById(selected) }}
+                        </z-combobox-chip>
+                    }
+                    <input z-combobox-chips-input placeholder="Gêneros" />
+                </z-combobox-chips>
 
                 <z-combobox-content>
                     <z-combobox-empty>Gênero não encontrado.</z-combobox-empty>
@@ -20,4 +47,5 @@
             </z-combobox>
         </div>
     </div>
+    <app-card-grid [eventos]="eventos()"></app-card-grid>
 </div>
