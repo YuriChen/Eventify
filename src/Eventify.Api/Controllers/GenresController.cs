@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Eventify.Api.Data;
-using Eventify.Api.Models.Entities;
+using Eventify.API.Data;
+using Eventify.API.Models.Entities;
 
-namespace Eventify.Api.Controllers;
+namespace Eventify.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

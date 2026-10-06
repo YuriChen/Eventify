@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
+using System.Data;
 using Dapper;
 
 namespace Eventify.API.Controllers;
@@ -24,11 +24,11 @@ public record EventListItem (
 [Route("api/[controller]")]
 public class EventsController : ControllerBase
 {
-    private readonly string _connectionString;
+    private readonly IDbConnection _connection;
 
-    public EventsController(IConfiguration config)
+    public EventsController(IDbConnection connection)
     {
-        _connectionString = config.GetConnectionString("DefaultConnection")!;
+        _connection = connection;
     }
 
     [HttpGet]
@@ -38,8 +38,8 @@ public class EventsController : ControllerBase
         DateTime? startDate,
         DateTime? endDate)
     {
-        using var connection = new SqlConnection(_connectionString);
-
+        // Current behaviour: no validation of the date range. An endDate before startDate
+        // is sent to SQL as-is and returns 200 with an empty list. Could be revisited later.
         var sql = @"
             SELECT 
                 e.Id, e.Title, e.CoverImageUrl,
@@ -74,7 +74,7 @@ public class EventsController : ControllerBase
 
         sql += " ORDER BY e.StartDate";
 
-        var events = await connection.QueryAsync(sql, new
+        var events = await _connection.QueryAsync(sql, new
         {
             CityId = cityId,
             StartDate = startDate,
