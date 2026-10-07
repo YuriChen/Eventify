@@ -15,6 +15,7 @@
         const html = document.documentElement;
 
         try {
+          if (!('theme' in localStorage)) localStorage.theme = 'dark';
           const theme = localStorage.theme;
           const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
 

@@ -3,7 +3,7 @@
         <p>Eventos:</p>
         <div id="divFilters" class="flex gap-5">
             <div>
-                <z-combobox id="cbCities" [(zValue)]="selectedCity" (zValueChange)="loadEventsGrid()">
+                <z-combobox id="cbCities" [zFilterFn]="accentInsensitiveFilter" [(zValue)]="selectedCity" (zValueChange)="loadEventsGrid()">
                     <z-combobox-input placeholder="Cidades" />
 
                     <z-combobox-content>
@@ -12,8 +12,6 @@
                         <z-combobox-list>
                             <z-combobox-item [zValue]="'2'">São Paulo</z-combobox-item>
                             <z-combobox-item [zValue]="'1'">Rio de Janeiro</z-combobox-item>
-                            <z-combobox-item [zValue]="'999'">Belo Horizonte</z-combobox-item>
-                            <z-combobox-item [zValue]="'888'">Curitiba</z-combobox-item>
                         </z-combobox-list>
                     </z-combobox-content>
                 </z-combobox>
@@ -26,7 +24,7 @@
                 </z-date-picker>
             </div>
             <div>
-                <z-combobox zMultiple zAutoHighlight zWidth="full" [(zValue)]="selectedGenres" (zValueChange)="loadEventsGrid()">
+                <z-combobox zMultiple zAutoHighlight zWidth="full" [zFilterFn]="accentInsensitiveFilter" [(zValue)]="selectedGenres" (zValueChange)="loadEventsGrid()">
                     <z-combobox-chips class="w-full max-w-xs">
                         @for (selected of selectedGenres(); track selected) {
                             <z-combobox-chip [zValue]="selected">

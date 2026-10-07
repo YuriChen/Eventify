@@ -1,5 +1,6 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, Input, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EDarkModes, ZardDarkMode } from '@/shared/services/dark-mode';
 
 export interface User {
   name: string;
@@ -25,6 +26,14 @@ export class Header {
 
   /** Controla dropdown do perfil */
   isProfileOpen = signal(false);
+
+  private readonly darkMode = inject(ZardDarkMode);
+
+  readonly isDark = () => this.darkMode.themeMode() === EDarkModes.DARK;
+
+  toggleTheme(): void {
+    this.darkMode.toggleTheme();
+  }
 
   toggleProfile(): void {
     this.isProfileOpen.update(v => !v);

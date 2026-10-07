@@ -7,6 +7,7 @@ import { CardGrid } from '../components/cardgrid';
 import { Genero } from '../classes/genero';
 import { ApiService } from '../services/api-service';
 import { Evento } from '../classes/evento';
+import { accentInsensitiveFilter } from '../utils/text-filter';
 
 export interface EventFilter {
   cityId?: string;
@@ -29,6 +30,7 @@ export class EventList implements OnInit
   selectedCity = signal<string | null>(null);
   selectedStartDate = signal<CalendarValue>(null);
   selectedGenres = signal<string[]>([]);
+  readonly accentInsensitiveFilter = accentInsensitiveFilter;
 
   ngOnInit(): void 
   {

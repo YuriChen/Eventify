@@ -11,11 +11,11 @@
             <z-card-content>
                 <p>{{ evento.venueName }} — {{ evento.city }}, {{ evento.state }}</p>
                 <p>{{ evento.startDate | date:'dd/MM/yyyy' }} às {{ evento.startDate | date:'HH:mm' }}</p>
-                <p class="text-lg font-bold text-[#A78BFA]">{{ evento.price | currency:'BRL' }}</p>
+                <p class="text-lg font-bold text-[#bb32ff] dark:text-eventifyColor2">{{ evento.price | currency:'BRL' }}</p>
 
                 <div class="flex flex-wrap gap-1 mt-2">
                     @for (genre of evento.genres; track $index) {
-                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#8B5CF6]/20 text-[#A78BFA] border border-[#8B5CF6]/30">
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#8B5CF6]/20 text-[#bb32ff] dark:text-eventifyColor2 border border-[#8B5CF6]/30">
                             {{ genre }}
                         </span>
                     }
@@ -23,6 +23,6 @@
             </z-card-content>
         </z-card>
     } @empty {
-        <p class="text-white/50 col-span-3">Nenhum evento encontrado.</p>
+        <p class="text-muted-foreground col-span-3">Nenhum evento encontrado.</p>
     }
 </div>
