@@ -4,8 +4,8 @@
             <img [src]="evento.coverImageUrl" [alt]="evento.title" class="w-full h-40 object-cover" />
 
             <z-card-header>
-                <z-card-title>{{ evento.title }}</z-card-title>
-                <z-card-description>{{ evento.producerName }}</z-card-description>
+                <z-card-title zTitle="{{ evento.title }}" class="font-eventifyFontTitle !text-xl"></z-card-title>
+                <z-card-description zDescription="{{ evento.producerName }}"></z-card-description>
             </z-card-header>
 
             <z-card-content>

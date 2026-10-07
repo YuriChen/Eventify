@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Eventify.API.Models.Entities;
+using Eventify.Api.Models.Entities;
 
-namespace Eventify.API.Data;
+namespace Eventify.Api.Data;
 
 public class AppDbContext : DbContext
 {

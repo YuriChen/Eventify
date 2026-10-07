@@ -1,8 +1,8 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="src/Eventify.Api/Eventify.API.csproj" />
+    <Project Path="src/Eventify.Api/Eventify.Api.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/Eventify.API.Tests/Eventify.API.Tests.csproj" />
+    <Project Path="tests/Eventify.Api.Tests/Eventify.Api.Tests.csproj" />
   </Folder>
 </Solution>

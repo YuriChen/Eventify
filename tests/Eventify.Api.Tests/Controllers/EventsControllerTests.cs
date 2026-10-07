@@ -1,11 +1,11 @@
 using System.Data;
 using Dapper;
-using Eventify.API.Controllers;
+using Eventify.Api.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Moq.Dapper;
 
-namespace Eventify.API.Tests.Controllers;
+namespace Eventify.Api.Tests.Controllers;
 
 public class EventsControllerTests
 {

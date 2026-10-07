@@ -1,15 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'OuterSansBold';
+  src: url('/fonts/made_outer_sans/OuterSansBold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('/fonts/creato_display/CreatoDisplay-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  letter-spacing: 0.1em !important;
+}
+
+
 @theme {
-    --eventifyColor1: #0A0A10;
-    --eventifyColor2: #8B5CF6;
-    --eventifyColor3: #EC4899;
-    --eventifyColor4: #06B6D4;
+    --color-eventifyColor1: #0A0A10;
+    --color-eventifyColor2: #ba85ff;
+    --color-eventifyColor3: #EC4899;
+    --color-eventifyColor4: #06B6D4;
+    --font-eventifyFontTitle: "OuterSansBold", sans-serif;
     --font-eventifyFontText: "Cousine", monospace;
+    --font-eventifyFontText2: "CreatoDisplay", sans-serif;
     /*--eventifyFontTitle:;
     --eventifyFontAlt:;*/
 }
+
 
 @layer base {
   html, body {
@@ -17,6 +38,20 @@
   }
   body {
     background-color: var(--eventifyColor1);
+  }
+
+  z-button,
+  button[z-button],
+  z-combobox,
+  z-combobox-input,
+  z-combobox-item,
+  z-combobox-chip,
+  z-date-picker,
+  input,
+  select,
+  textarea,
+  button {
+    font-family: var(--font-eventifyFontText2);
   }
 }
 

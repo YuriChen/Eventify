@@ -1,5 +1,5 @@
 // Models/Entities/Genre.cs
-namespace Eventify.API.Models.Entities;
+namespace Eventify.Api.Models.Entities;
 
 public class Event
 {

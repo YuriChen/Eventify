@@ -1,6 +1,6 @@
 
 <header
-  class="sticky top-0 z-50 backdrop-blur-xl bg-transparent border-b border-white/10 px-6 py-3.5 transition-all">
+  class="sticky top-0 z-50 backdrop-blur-xl bg-[#131319]/85 border-b border-white/10 px-6 py-3.5 transition-all">
   <div class="max-w-7xl mx-auto flex items-center justify-between gap-6">
 
     <!-- ============================================================
@@ -22,7 +22,7 @@
             </defs>
           </svg>
         </div>
-        <span class="text-xl tracking-wider text-white">
+        <span class="font-eventifyFontTitle text-xl tracking-wider text-white">
           EVENTIFY
         </span>
       </a>
@@ -34,7 +34,7 @@
             d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
-        <span>{{ city }}</span>
+        <span class="font-eventifyFontText2">{{ city }}</span>
         <svg class="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
@@ -44,37 +44,35 @@
     <!-- ============================================================
          NAVEGAÇÃO CENTRAL — varia conforme login
          ============================================================ -->
-    <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+    <nav class="hidden md:flex items-center gap-10 text-sm font-medium">
 
       <!-- ============ VISITANTE ============ -->
       @if (!user) {
-        <a href="/eventos" class="text-[#8B5CF6] font-semibold">Explorar Eventos</a>
-        <a href="/festivais" class="hover:text-white transition">Festivais</a>
-        <a href="/artistas" class="hover:text-white transition">Artistas & DJs</a>
-        <a href="/cidades" class="hover:text-white transition">Cidades</a>
-        <a href="/meus-ingressos" class="hover:text-white transition">Meus Ingressos</a>
+        <a href="/eventos" class="font-eventifyFontText2 text-eventifyColor2 hover:text-white transition">Explorar Eventos</a>
+        <a href="/artistas" class="font-eventifyFontText2 text-eventifyColor2 hover:text-white transition">Artistas</a>
+        <a href="/forum" class="font-eventifyFontText2 text-eventifyColor2 hover:text-white transition">Fórum</a>
       }
 
       <!-- ============ LOGADO ============ -->
       @if (user) {
         <a href="/explorar"
-          class="px-4 py-2 rounded-full bg-[#8B5CF6] text-white shadow-[0_0_12px_rgba(139,92,246,0.4)] hover:bg-[#7c3aed] transition">
+          class="font-eventifyFontText2 px-4 py-2 rounded-full bg-eventifyColor2 text-white shadow-[0_0_12px_rgba(139,92,246,0.4)] hover:bg-[#7c3aed] transition">
           Explorar
         </a>
-        <a href="/evento" class="px-3.5 py-2 rounded-full text-white/70 hover:text-white hover:bg-white/5 transition">
+        <a href="/evento" class="font-eventifyFontText2 px-3.5 py-2 rounded-full text-eventifyColor2/70 hover:text-eventifyColor2 hover:bg-white/5 transition">
           Detalhes do Evento
         </a>
         <a href="/meus-ingressos"
-          class="px-3.5 py-2 rounded-full text-white/70 hover:text-white hover:bg-white/5 transition flex items-center gap-1.5">
+          class="font-eventifyFontText2 px-3.5 py-2 rounded-full text-eventifyColor2/70 hover:text-eventifyColor2 hover:bg-white/5 transition flex items-center gap-1.5">
           Meus Ingressos
           <span
-            class="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-[#D946EF]/20 text-[#D946EF] border border-[#D946EF]/30">
+            class="font-eventifyFontText2 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-eventifyColor3/20 text-eventifyColor3 border border-eventifyColor3/30">
             {{ user.ticketsCount }}
           </span>
         </a>
         <a href="/artistas-salvos"
-          class="px-3.5 py-2 rounded-full text-white/70 hover:text-white hover:bg-white/5 transition">
-          Artistas Salvos
+          class="font-eventifyFontText2 px-3.5 py-2 rounded-full text-white/70 hover:text-white hover:bg-white/5 transition">
+          <span class="text-eventifyColor2">Artistas Salvos</span>
         </a>
       }
     </nav>
@@ -86,11 +84,11 @@
 
       <!-- ============ VISITANTE ============ -->
       @if (!user) {
-        <a href="/login" class="px-4 py-2 text-xs font-semibold text-white/80 hover:text-white transition">
+        <a href="/login" class="font-eventifyFontText2 px-4 py-2 text-xs font-semibold text-white/80 hover:text-white transition">
           Entrar
         </a>
         <a href="/cadastro"
-          class="px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] hover:opacity-95 shadow-[0_0_15px_rgba(217,70,239,0.35)] transition">
+          class="font-eventifyFontText2 px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] hover:opacity-95 shadow-[0_0_15px_rgba(217,70,239,0.35)] transition">
           Criar Conta
         </a>
       }

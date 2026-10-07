@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Eventify.Api\Eventify.API.csproj" />
+    <ProjectReference Include="..\..\src\Eventify.Api\Eventify.Api.csproj" />
   </ItemGroup>
 
 </Project>

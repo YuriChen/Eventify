@@ -1,4 +1,4 @@
-using Eventify.API.Data;
+using Eventify.Api.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

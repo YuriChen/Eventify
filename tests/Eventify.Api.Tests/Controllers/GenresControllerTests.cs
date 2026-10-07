@@ -1,10 +1,10 @@
-using Eventify.API.Controllers;
-using Eventify.API.Data;
-using Eventify.API.Models.Entities;
+using Eventify.Api.Controllers;
+using Eventify.Api.Data;
+using Eventify.Api.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Eventify.API.Tests.Controllers;
+namespace Eventify.Api.Tests.Controllers;
 
 // AppDbContext is exercised through the EF Core InMemory provider rather than a Moq mock:
 // the controller depends on DbSet LINQ + async materialization, which Moq cannot fake reliably.

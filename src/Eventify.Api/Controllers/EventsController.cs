@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using Dapper;
 
-namespace Eventify.API.Controllers;
+namespace Eventify.Api.Controllers;
 
 public record EventListItem (
     int Id,
