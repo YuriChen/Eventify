@@ -4,6 +4,9 @@ Plataforma para descoberta e divulgação de eventos musicais — festivais, sho
 festas e eventos em clubes. O Eventify conecta fãs a produtores, permitindo 
 explorar eventos por cidade, data e gênero musical.
 
+## VÍDEO: 
+https://www.youtube.com/watch?v=XrKpp0ep_s8
+
 ## 🚀 Sobre o projeto
 
 O Eventify é uma aplicação web full-stack em desenvolvimento, criada para centralizar 
@@ -27,15 +30,15 @@ desenvolvimento.
 - [x] Filtro de gêneros na página Explorar, consumindo dados do banco
 - [x] Filtro de data (date picker) na página Explorar
 - [x] Proxy de desenvolvimento configurado (Angular → API)
+- [x] Grid de eventos com cards (capa, título, produtor, local, data, preço)
+- [x] Filtro por cidade
+- [x] Armazenamento de imagens na AWS S3
+- [x] Banco de dados na AWS RDS
 
 ### Em desenvolvimento
-- [ ] Grid de eventos com cards (capa, título, produtor, local, data, preço)
-- [ ] Filtro por cidade
 - [ ] Página de detalhes do evento (`/eventos/:id`)
 - [ ] Cadastro e autenticação de usuários
 - [ ] Sistema de ingressos
-
-### Planejadas
 - [ ] Salvamento de eventos favoritos
 - [ ] Notificações de novos eventos
 - [ ] Painel do produtor de eventos
@@ -49,17 +52,18 @@ desenvolvimento.
 - **TypeScript** — tipagem estática
 - **Tailwind CSS** — estilização utilitária
 - **ZardUI** — biblioteca de componentes baseada em Tailwind (filosofia shadcn/ui)
-- **Vite** — servidor de desenvolvimento com hot reload
 - **RxJS** — programação reativa (Observables para HTTP)
 
 ### Backend
 - **ASP.NET Core** — API REST
+- **Dapper** 
 - **Entity Framework Core** — ORM para acesso a dados
 - **SQL Server** — banco de dados relacional
 - **C# 13** — linguagem com async/await e LINQ
 - **OpenAPI** — documentação da API
 
 ### Ferramentas
+- **Claude Code**
 - **Git / GitHub** — versionamento
-- **Visual Studio / VS Code** — desenvolvimento
+- **Cursor** — IDE voltada para IA. Fork do VS Code.
 - **SSMS** — gerenciamento do banco de dados
